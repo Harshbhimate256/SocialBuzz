@@ -2,10 +2,10 @@ var express = require('express');
 var router = express.Router();
 // const bcrypt = require('bcrypt.js')
 // import bcrypt from "bcryptjs";
-const userModel = require('./users');
-const postModel = require('./post');
+const userModel = require('./routes/users');
+const postModel = require('./routes/post');
 const passport = require('passport');
-const upload = require('./multer');
+const upload = require('./routes/multer');
 const moment = require('moment');
 const localStrategy = require('passport-local');
 passport.use(new localStrategy(userModel.authenticate()));

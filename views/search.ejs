@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/search.css">
+    <title>search user</title>
+</head>
+<body>
+    <div class="navbar">
+        <div><h1>Search user</h1></div>
+        <div class="searchbar">
+            <input id="inputusername" type="text" placeholder="search user">
+        </div>
+        <div class="links">
+            <div class="navbtn"><a href="/feed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35" fill="currentColor"><path d="M10.8284 12.0007L15.7782 16.9504L14.364 18.3646L8 12.0007L14.364 5.63672L15.7782 7.05093L10.8284 12.0007Z"></path></svg></a></div>
+        </div>
+    </div>
+    <div class="container"> 
+        
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js" integrity="sha512-JSCFHhKDilTRRXe9ak/FJ28dcpOJxzQaCd3Xg8MyF6XFjODhy/YMCM8HW0TFDckNHWUewW+kfvhin43hKtJxAw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        const input = document.querySelector('#inputusername');
+        let clutter = '';
+        input.addEventListener("input" , function(){
+            axios.get(`/username/${input.value}`)
+            .then(function(data){
+                clutter = '';
+            data.data.forEach(function(elem){
+                clutter += `<a href="/profile">
+            <div class="profiledata">
+                <div class="profile">
+                    <img height="100%" width="100%" src="/images/uploads/${elem.profileImage}" alt="" onerror="this.style.display='none'">
+                </div>
+        <div class="userinfo">
+            <h1><b>${elem.username}</b></h1>
+            <p>${elem.name}</p>
+        </div>
+    </div>
+    </a>`})
+        document.querySelector(".container").innerHTML = clutter;
+        })
+        })
+        
+        document.addEventListener("DOMContentLoaded", function(event) { 
+            var scrollpos = localStorage.getItem('scrollpos');
+            if (scrollpos) window.scrollTo(0, scrollpos);
+        });
+
+        window.onbeforeunload = function(e) {
+            localStorage.setItem('scrollpos', window.scrollY);
+        };
+    </script>
+</body>
+</html>

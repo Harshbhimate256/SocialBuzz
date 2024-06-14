@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/profile.css">
+  <title>profile</title>
+</head>
+
+<body>
+  <div class="navbar">
+    <h1>
+      BlogPost
+    </h1>
+    <div class="links">
+      <a href="/search">
+        <div class="navbtn"><svg xmlns="http://www.w3.org/2000/svg" height="35px" width="35px" viewBox="0 0 24 24"
+            fill="currentColor">
+            <path
+              d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z">
+            </path>
+          </svg>Search</div>
+      </a>
+      <a href="/upload">
+        <div class="navbtn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35"
+            fill="currentColor">
+            <path
+              d="M13.0001 10.9999L22.0002 10.9997L22.0002 12.9997L13.0001 12.9999L13.0001 21.9998L11.0001 21.9998L11.0001 12.9999L2.00004 13.0001L2 11.0001L11.0001 10.9999L11 2.00025L13 2.00024L13.0001 10.9999Z">
+            </path>
+          </svg>Create</div>
+      </a>
+      <a href="/feed">
+        <div class="navbtn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35"
+            fill="currentColor">
+            <path
+              d="M21 20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9.48907C3 9.18048 3.14247 8.88917 3.38606 8.69972L11.3861 2.47749C11.7472 2.19663 12.2528 2.19663 12.6139 2.47749L20.6139 8.69972C20.8575 8.88917 21 9.18048 21 9.48907V20ZM19 19V9.97815L12 4.53371L5 9.97815V19H19ZM7 15H17V17H7V15Z">
+            </path>
+          </svg>Feed</div>
+      </a>
+    </div>
+  </div>
+  <div class="container">
+    <div class="user-header-wrapper">
+      <div class="user-header-inner">
+        <div class="uh-left">
+          <div class="uh-image">
+            <img class="uh-image-inner" src="/images/uploads/<%=user.profileImage%>" alt="" height="100%" width="100%">
+            <!-- <div class="gradient"></div> -->
+          </div>
+        </div>
+        <div class="uh-right">
+          <div class="user-info">
+            <h1>
+              <%=user.username%>
+            </h1>
+          </div>
+          <!-- <div class=user-links>
+            <a><span style="color: rgb(0, 0, 0);">2.1k</span> Posts</a>
+            <a><span style="color: rgb(0, 0, 0);">421k</span> Followers</a>
+            <a><span style="color: rgb(0, 0, 0);">100</span> Following</a>
+        </div> -->
+          <div class="user-bio">
+            <p class="user-bio-name">
+              <%=user.name %>
+            </p>
+            <p style="text-transform: capitalize;"><b>Role:</b>
+              <%=user.role%>
+            </p>
+            <p><i>
+                <%=user.bio%>
+              </i></p>
+            <button class="btn"><a style="text-decoration: none; color: black;" href="/editprofile">Edit
+                Profile</a></button>
+            <a href="/logout"><button class="btn">Logout</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="user-page-wrapper">
+      <div class="user-page-inner">
+        <% user.posts.reverse().forEach(function(post){ %>
+          <div class="image-wrapper">
+            <img class="image" src="/images/uploads/<%=post.image%>" alt="">
+            <div class="hover-icons">
+              <div class="icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="red">
+                  <path
+                    d="M12.001 4.52853C14.35 2.42 17.98 2.49 20.2426 4.75736C22.5053 7.02472 22.583 10.637 20.4786 12.993L11.9999 21.485L3.52138 12.993C1.41705 10.637 1.49571 7.01901 3.75736 4.75736C6.02157 2.49315 9.64519 2.41687 12.001 4.52853Z">
+                  </path>
+                </svg>
+                <p>
+                  <%=post.likes.length%> likes
+                </p>
+              </div>
+              <div class="icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
+                  <path
+                    d="M10 3H14C18.4183 3 22 6.58172 22 11C22 15.4183 18.4183 19 14 19V22.5C9 20.5 2 17.5 2 11C2 6.58172 5.58172 3 10 3Z">
+                  </path>
+                </svg>
+                <p>
+                  <%=post.comments.length%> comments
+                </p>
+              </div>
+              <div class="icon-container">
+                <a style="color: white;" href="/post/delete/<%=post._id%>">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40"
+                    fill="currentColor">
+                    <path
+                      d="M7 4V2H17V4H22V6H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V6H2V4H7ZM6 6V20H18V6H6ZM9 9H11V17H9V9ZM13 9H15V17H13V9Z">
+                    </path>
+                  </svg>
+                </a>
+                <p>delete</p>
+              </div>
+
+            </div>
+          </div>
+          <% }) %>
+
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

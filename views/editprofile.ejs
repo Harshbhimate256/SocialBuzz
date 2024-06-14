@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/editprofile.css">
+    <title>Edit profile</title>
+</head>
+<body>
+    <div class="navbar">
+        <h1>BlogPost</h1>
+        <div class="links">
+            <a href="/feed"><div class="navbtn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35" fill="currentColor"><path d="M21 20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9.48907C3 9.18048 3.14247 8.88917 3.38606 8.69972L11.3861 2.47749C11.7472 2.19663 12.2528 2.19663 12.6139 2.47749L20.6139 8.69972C20.8575 8.88917 21 9.18048 21 9.48907V20ZM19 19V9.97815L12 4.53371L5 9.97815V19H19ZM7 15H17V17H7V15Z"></path></svg>Feed</div></a>
+            <a href="/profile"><div class="navbtn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35" fill="currentColor"><path d="M20 22H18V20C18 18.3431 16.6569 17 15 17H9C7.34315 17 6 18.3431 6 20V22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13ZM12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"></path></svg>Profile</div></a>
+        </div>
+    </div>
+<form action="/updateDetails" method="post" enctype="multipart/form-data">
+    <div class="container">
+        <div class="left">
+            <h1>Edit profile</h1>
+            <div class="updatepic">
+                <div class="bg"></div>
+                <div class="profilecircle" style="background-color: lightblue;">
+                    <img height="100%" width="100%" src="/images/uploads/<%=user.profileImage%>" onerror="this.style.display='none'">
+                </div>
+                <div class="profilelower">
+                    <h1>Your Photo</h1> <br>
+                    <p>This will be displayed on your profile</p> <br>
+                    <input  class="uploadbtn" type="file" id="upload" name="profileUpload" hidden><label for="upload">Upload new</label>
+                    <input style="color: black; cursor: pointer;" class="savebtn" type="submit">
+                    <!-- <button class="savebtn"><a href="#">Save</a></button> -->
+                </div>
+            </div>
+            <div style="font-family: Arial, Helvetica, sans-serif" class="updateinfo">
+                <div style="font-family: Arial, Helvetica, sans-serif;"><h1>Personal information</h1></div>
+                <div class="fnameUpdate">
+                    <h1 style="font-size: 20px;">Full name</h1>
+                    <input type="text" name="fullname" placeholder="enter full name" value="<%=user.name%>">
+                </div>
+                <div class="usernameUpdate">
+                    <h1 style="font-size: 20px;">Username</h1>
+                    <input type="text" name="username" placeholder="enter username" value="<%=user.username%>">
+                    <p style="color: grey;">! need to login again if changed username !</p>
+                </div>
+                <div class="emailUpdate">
+                    <h1 style="font-size: 20px;">Email address</h1>
+                    <input type="text" name="email" placeholder="enter email address" value="<%=user.email%>">
+                </div>
+                <div class="role">
+                    <h1 style="font-size: 20px;">Role</h1>
+                    <input type="text" name="role" placeholder="describe yourself/Role" value="<%=user.role%>">
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="bio" style="font-family: Arial, Helvetica, sans-serif;">
+                <h1 style="font-size: 20px;">Bio</h1>
+                    <textarea style="resize: none;" name="bio" placeholder="Enter your bio" maxlength="60"><%=user.bio  %></textarea>
+            </div>
+        </div>
+    </div>
+</form>
+<script>
+    function hideImg() {
+      document.getElementById("HideImg").style.display = "none";
+     }
+      </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/register.css">
+  <title>Register</title>
+</head>
+<body>
+<div class="navbar">
+  <h1>BlogPost</h1>
+</div>
+<div class="card">
+ <h2>Signup Form</h2>
+
+ <div class="login_register">
+     <p class="login" target="blank">Login</p>    
+     <p class="register" target="blank">Signup</p>
+ </div>
+
+ <form action="/register" class="form" method="post">
+    <input type="text" placeholder="enter username" class="email" name="username">
+    <input type="text" placeholder="enter name" class="email" name="name">
+    <input type="email" placeholder="Email Adress" class="email" name="email">
+    <input type="password" placeholder="password" class="pass" name="password">
+    <button type="submit" class="login_btn">Signup</button>
+ </form>
+     <p>Already a user?<a style="color: #5881D0;" href="/loginHere">Login here</a></p>
+</div>
+ 
+</body>
+</html>

@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Gilroy";
+  }
+body {
+    background-color: rgb(255, 255, 255);
+    background-image: url(/images/blue-blurry-background.jpg);
+    background-attachment: fixed;
+}
+.container{
+    display: flex;
+    width: 70%;
+    position: relative;
+}
+.navbar{
+    display: flex;
+    flex-direction:  column;
+    gap: 2vw;
+    /* justify-content: space-between; */
+    /* padding: .5vw 2vw; */
+    background-color: rgb(255, 255, 255);
+    /* align-items: center; */
+    position: fixed;
+    width: 20%;
+    z-index: 99;
+    height: 100%;
+    border-right: 2px solid rgba(0, 0, 0, 0.435);
+}
+.navbar h1{
+  border-bottom: 1px solid black;
+  padding: 20px;
+}
+.links{
+    display: flex;
+    gap: 1vw;
+    flex-direction: column;
+    font-size: 1.1vw;
+}
+.links a{
+    text-decoration: none;
+    color: black;
+    height: 3vw;
+    width: 10vw;
+    font-family: sans-serif;
+}
+.navbtn{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    /* border: 1px solid rgba(0, 0, 0, 0.244); */
+    padding: 15px;
+    height: 3vw;
+    width: 10vw;
+}
+.navbtn svg{
+    margin-right: 10px;
+}
+.navbtn:hover{
+    cursor: pointer;
+    font-weight: bold;
+}
+.main{
+    margin-left: 30%;
+    min-height: 100vh;
+    width: 60%;
+    /* background-color: rgb(51, 51, 51); */
+    border: 1px solid black;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+}
+.main h1{
+    text-align: center;
+    margin-top: 1vw;
+    border-bottom: 1px solid black;
+}
+.comments-container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.comments{
+    display: flex;
+    gap: 10px;
+    padding: 5px 10px;
+    align-items: center;
+    border: 1px solid red;
+}
+.profile-img{
+    height: 4vw;
+    width: 4vw;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.profile-img img{
+    object-fit: cover;
+    background-color: lightblue;
+}
+.comment-content{
+    display: flex;
+    width: 80%;
+    align-items: center;
+    gap: 10px;
+}
+.delete-icon{
+    color: black;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.delete-icon:hover{
+    background-color: #dadef6;
+}

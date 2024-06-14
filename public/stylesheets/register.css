@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gilroy';
+  text-decoration: none;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.navbar{
+  width: 100%;
+  font-size: 1.3vw;  
+  padding: 10px;
+  text-align: center;
+}
+.navbar h1{
+  background: -webkit-linear-gradient(lightblue, darkblue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card{
+    margin-top: 10vh;
+    width: auto;
+    height: auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-top: 1px solid lightblue;
+    border-left: 1px solid lightblue;
+    border-radius: 20px;
+    box-shadow: 10px 10px 5px lightblue;
+}
+
+.card h2{
+  margin-bottom: 10px;
+}
+
+.card a.fp{
+  width: 100%;
+  display: flex;
+  color: #5881D0;
+}
+
+.login_register{
+  display: flex;
+  width: 100%;
+  border: 1px solid rgba(221, 221, 221, 1);
+  border-radius: 15px;
+  margin: 20px 0;
+}
+
+.login_register p{
+  font-size: 1em;
+  padding: 10px 55px;
+  border: none;
+  width: 50%;
+}
+
+.login_register p.login{
+  border-radius: 15px;
+  background-color: transparent;
+  color: black;
+}
+
+.login_register p.register{
+  border-radius: 15px;
+  background: linear-gradient(90deg, #003A74, #006AD5);
+  color: white;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form input{
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #DDDDDD;
+  color: #A0A6A3;
+  font-family: "Roboto Mono", sans-serif;
+  box-shadow: 1px 5px 9px rgba(211, 211, 211, .7);
+}
+
+.form input.email{
+  margin-bottom: 15px;
+}
+
+.form input.pass{
+  margin-bottom: 15px;
+}
+
+.form input.comfirm_pass{
+  margin-bottom: 5px;
+}
+
+.login_btn{
+  font-size: 20px;
+  color: white;
+  border-radius: 15px;
+  border: none;
+  background-color: #003A74;
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background: linear-gradient(-90deg, #003A74, #006AD5);
+  box-shadow: 1px 5px 9px rgba(211, 211, 211, .9);
+}

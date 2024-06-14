@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/stylesheets/login.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>BlogPost</h1>
+      </div>
+<div class="card">
+   <h2>Login Form</h2>
+
+   <div class="login_register">
+       <p class="login" target="blank">Login</p>
+       <p class="register" target="blank">Signup</p>
+   </div>
+    <% if (error.length > 0) { %>
+    <p class="error"><%= error  %></p>
+    <% } %>
+   <form action="/login" method="post" class="form">
+       <input type="text" placeholder="enter username" name="username" class="email">
+       <input type="password" placeholder="password" name='password' class="pass">
+       <button type="submit" class="login_btn">Login</button>
+   </form>
+
+   <div class="footer_card">
+        <p>Not a member?</p>
+        <a href="/">Singup now</a>
+   </div>
+</div>
+   
+</body>
+</html>

@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Gilroy";
+  }
+  body {
+    background-color: black;
+    background-image: url(/images/blue-blurry-background.jpg);
+    background-attachment: fixed;
+  }
+  .navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: .5vw 6vw;
+    background-color: rgb(255, 255, 255);
+    /* background-image: url(/images/navbg.jpg); */
+    align-items: center;
+    /* position: fixed; */
+    width: 100%;
+    /* z-index: 99; */
+}
+.searchbar{
+    padding-right: 6vw;
+}
+.searchbar input{
+    padding: 5px;
+    height: 2vw;
+    width: 35vw;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10px;
+}
+.links{
+    display: flex;
+    gap: 5vw;
+    font-weight: bold;
+    font-size: 1.1vw;
+}
+.links a{
+    text-decoration: none;
+    color: black;
+    font-family: sans-serif;
+}
+.navbtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.244);
+    padding: 5px;
+    width: 3vw;
+    height: 3vw;
+    border-radius:100%;
+}
+.navbtn:hover{
+    background-color: rgb(232, 232, 232);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    margin-top: 1vw;
+    position: relative;
+    /* background-color: grey; */
+    border: 1px solid rgba(0, 0, 0, 0.81);
+    transform: translateX(-50%);
+    width: 40%;
+    border-radius: 10px;
+    overflow: hidden;
+    gap: 5px;
+    padding: 5px 5px;
+}
+.profiledata{
+    width: 100%;
+    height: 9vh;
+    background-color: rgba(44, 44, 44, 0.324);
+    display: flex;
+    border-radius: 10px;
+    padding: 4px 20px;
+    gap: 1vw;
+}
+.profile{
+    height: 8vh;
+    width: 4vw;
+    border: 1px solid rgba(255, 255, 255, 0.509);
+    border-radius: 50%; 
+    overflow: hidden;
+    background-color: lightblue;
+}
+.profile img{
+    object-fit: cover;
+}
+.container a{
+    text-decoration: none;
+    color: white;
+}
+.userinfo{
+    display: flex;
+    flex-direction: column;
+}

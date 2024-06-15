@@ -2,10 +2,10 @@ var express = require('express');
 var router = express.Router();
 // const bcrypt = require('bcrypt.js')
 // import bcrypt from "bcryptjs";
-const userModel = require('./routes/users');
-const postModel = require('./routes/post');
+const userModel = require('./users');
+const postModel = require('./post');
 const passport = require('passport');
-const upload = require('./routes/multer');
+const upload = require('./multer');
 const moment = require('moment');
 const localStrategy = require('passport-local');
 passport.use(new localStrategy(userModel.authenticate()));
@@ -171,4 +171,5 @@ router.post('/updateDetails',isLoggedIn,upload.single('profileUpload'), async fu
   await user.save();
   res.redirect('/profile');
 })
+
 module.exports = router;
